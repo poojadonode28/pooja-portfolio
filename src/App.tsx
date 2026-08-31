@@ -33,7 +33,7 @@ const impactMetrics = [
   { value: "95%+", label: "test coverage" },
   { value: "50%", label: "faster data retrieval" },
   { value: "60%", label: "faster SQL processing" },
-  { value: "9+", label: "production APIs shipped" },
+  { value: "70+", label: "production APIs shipped" },
 ] as const;
 
 const expertiseIcons = [ServerCog, CodeXml, Check, Database] as const;
