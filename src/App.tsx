@@ -276,15 +276,8 @@ const App = () => {
         </section>
 
         <section className="section projects-section" id="projects">
-          <div className="section-heading">
-            <div>
-              <p className="eyebrow">Personal projects</p>
-              <h2>Systems designed for real-world load.</h2>
-            </div>
-            <p>
-              Side builds where I get to own the architecture end to end, from data model
-              to performance budget.
-            </p>
+          <div className="section-heading section-heading-compact">
+            <h2>Personal projects</h2>
           </div>
 
           <div className="project-grid">
