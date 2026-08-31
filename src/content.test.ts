@@ -18,6 +18,12 @@ describe("portfolio content", () => {
       "Tekion",
       "Cognizant",
     ]);
+    expect(experience.map((role) => role.url)).toEqual([
+      "https://jfrog.com",
+      "https://www.vidyuttech.com",
+      "https://www.tekion.com",
+      "https://www.cognizant.com",
+    ]);
   });
 
   it("includes both portfolio-ready resume projects", () => {

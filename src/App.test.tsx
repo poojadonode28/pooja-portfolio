@@ -23,8 +23,14 @@ describe("portfolio page", () => {
   it("exposes the core work history and project case studies", () => {
     render(<App />);
 
-    expect(screen.getByRole("heading", { name: "JFrog" })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "VidyutTech" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "JFrog" })).toHaveAttribute(
+      "href",
+      "https://jfrog.com",
+    );
+    expect(screen.getByRole("link", { name: "VidyutTech" })).toHaveAttribute(
+      "href",
+      "https://www.vidyuttech.com",
+    );
     expect(screen.getByRole("heading", { name: "PopcornTime" })).toBeInTheDocument();
     expect(
       screen.getByRole("heading", { name: "E-Commerce Platform" }),

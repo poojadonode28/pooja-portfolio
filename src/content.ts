@@ -11,6 +11,7 @@ type Profile = {
 
 type Experience = {
   readonly company: string;
+  readonly url: string;
   readonly role: string;
   readonly period: string;
   readonly location: string;
@@ -42,6 +43,7 @@ export const profile = {
 export const experience = [
   {
     company: "JFrog",
+    url: "https://jfrog.com",
     role: "Software Engineer",
     period: "Apr 2025 — Present",
     location: "Bengaluru, India",
@@ -56,6 +58,7 @@ export const experience = [
   },
   {
     company: "VidyutTech",
+    url: "https://www.vidyuttech.com",
     role: "Software Development Engineer",
     period: "Mar 2024 — Apr 2025",
     location: "Bengaluru, India",
@@ -70,6 +73,7 @@ export const experience = [
   },
   {
     company: "Tekion",
+    url: "https://www.tekion.com",
     role: "Software Engineer",
     period: "Nov 2023 — Jan 2024",
     location: "Bengaluru, India",
@@ -83,6 +87,7 @@ export const experience = [
   },
   {
     company: "Cognizant",
+    url: "https://www.cognizant.com",
     role: "Programmer Analyst",
     period: "Oct 2021 — Dec 2022",
     location: "Pune, India",

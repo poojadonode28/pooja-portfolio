@@ -256,7 +256,16 @@ const App = () => {
                   </div>
                   <div className="timeline-content">
                     <p className="role-label">{role.role}</p>
-                    <h3>{role.company}</h3>
+                    <h3>
+                      <a
+                        className="company-link"
+                        href={role.url}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {role.company}
+                      </a>
+                    </h3>
                     <p className="role-summary">{role.summary}</p>
                     <ul className="highlight-list">
                       {role.highlights.map((highlight) => (

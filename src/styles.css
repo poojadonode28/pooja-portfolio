@@ -971,6 +971,15 @@ h2 {
   letter-spacing: -0.035em;
 }
 
+.company-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.company-link:hover {
+  color: var(--primary);
+}
+
 .role-summary {
   max-width: 760px;
   color: var(--muted);
