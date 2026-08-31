@@ -210,14 +210,37 @@ const App = () => {
             </div>
             <div className="about-copy">
               <p>
-                I&apos;m a software engineer who enjoys hard platform problems: event
-                workflows, API design, performance tuning, data models, and the product
-                interfaces that make complex systems usable.
+                I&apos;m a{" "}
+                <strong>Software Engineer with 5+ years of experience</strong> building
+                scalable backend systems, APIs, and platform solutions. I&apos;m currently
+                working at <strong>JFrog</strong>, where I work on engineering problems
+                across backend services, event-driven workflows, and developer-focused
+                platforms.
               </p>
               <p>
-                My work spans enterprise software at JFrog, mobility products at
-                VidyutTech, automotive technology at Tekion, and large-scale data systems
-                at Cognizant.
+                My core expertise includes{" "}
+                <strong>
+                  Java, Spring Boot, REST APIs, databases, distributed systems, and system
+                  design
+                </strong>
+                . I enjoy solving challenging problems around{" "}
+                <strong>
+                  API design, event-driven architectures, performance optimization, data
+                  modeling, and system reliability
+                </strong>
+                .
+              </p>
+              <p>
+                I&apos;m particularly interested in understanding how systems work at
+                scale and designing solutions that are{" "}
+                <strong>reliable, maintainable, and easy to use</strong>. I also enjoy
+                working at the intersection of engineering and product—turning complex
+                technical problems into simple experiences for developers and users.
+              </p>
+              <p>
+                When I&apos;m not building software, I&apos;m usually learning something
+                new, exploring better ways to design systems, or working on side projects
+                to sharpen my engineering skills.
               </p>
               <div className="education-card">
                 <BriefcaseBusiness aria-hidden="true" />

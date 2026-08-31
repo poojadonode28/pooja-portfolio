@@ -39,6 +39,8 @@ describe("portfolio page", () => {
     expect(
       screen.getByRole("heading", { name: "E-Commerce Platform" }),
     ).toBeInTheDocument();
+    expect(screen.getByText(/5\+ years of experience/i)).toBeInTheDocument();
+    expect(screen.getByText(/currently working at/i)).toBeInTheDocument();
   });
 
   it("toggles the mobile navigation with an announced state", () => {

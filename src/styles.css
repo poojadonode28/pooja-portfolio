@@ -1104,6 +1104,11 @@ h2 {
   font-size: 1.25rem;
 }
 
+.about-copy strong {
+  color: var(--surface);
+  font-weight: 700;
+}
+
 .education-card {
   display: flex;
   margin-top: 38px;
