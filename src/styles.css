@@ -320,11 +320,6 @@ h2 {
   text-wrap: balance;
 }
 
-.hero h1 span {
-  display: block;
-  color: var(--primary);
-}
-
 .hero-summary {
   max-width: 630px;
   margin-bottom: 36px;

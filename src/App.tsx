@@ -120,10 +120,7 @@ const App = () => {
                 <span aria-hidden="true" />
                 Software engineer · Bengaluru
               </div>
-              <h1>
-                Pooja Donode
-                <span>builds software that holds up.</span>
-              </h1>
+              <h1>Pooja Donode</h1>
               <p className="hero-summary">{profile.summary}</p>
               <div className="hero-actions">
                 <a className="button" href="#experience">
