@@ -240,15 +240,8 @@ const App = () => {
 
         <section className="experience-section" id="experience">
           <div className="section">
-            <div className="section-heading">
-              <div>
-                <p className="eyebrow">Experience</p>
-                <h2>From data foundations to enterprise platforms.</h2>
-              </div>
-              <p>
-                Four roles, one consistent thread: finding the bottleneck and making the
-                system better.
-              </p>
+            <div className="section-heading section-heading-compact">
+              <h2 className="eyebrow">Experience</h2>
             </div>
 
             <div className="timeline">
