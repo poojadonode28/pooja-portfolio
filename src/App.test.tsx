@@ -22,6 +22,10 @@ describe("portfolio page", () => {
       "href",
       "tel:+919689955894",
     );
+    expect(screen.getByRole("link", { name: "LeetCode" })).toHaveAttribute(
+      "href",
+      "https://leetcode.com/u/poojadonode31/",
+    );
   });
 
   it("exposes the core work history and project case studies", () => {

@@ -7,6 +7,7 @@ type Profile = {
   readonly summary: string;
   readonly linkedin: string;
   readonly github: string;
+  readonly leetcode: string;
 };
 
 type Experience = {
@@ -39,6 +40,7 @@ export const profile = {
     "Building scalable systems and thoughtful product experiences with Java, Spring Boot, Vue, React, and TypeScript.",
   linkedin: "https://www.linkedin.com/in/pooja-donode-948b49244",
   github: "https://github.com/poojadonode28",
+  leetcode: "https://leetcode.com/u/poojadonode31/",
 } satisfies Profile;
 
 export const experience = [

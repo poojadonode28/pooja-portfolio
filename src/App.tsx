@@ -18,7 +18,7 @@ import {
   Sparkles,
   X,
 } from "lucide-react";
-import { siGithub } from "simple-icons";
+import { siGithub, siLeetcode } from "simple-icons";
 import BrandIcon, { linkedinIcon } from "./BrandIcon";
 import { experience, profile, projects, skillGroups } from "./content";
 
@@ -144,6 +144,10 @@ const App = () => {
                 <a href={profile.github} target="_blank" rel="noreferrer">
                   <BrandIcon icon={siGithub} />
                   GitHub
+                </a>
+                <a href={profile.leetcode} target="_blank" rel="noreferrer">
+                  <BrandIcon icon={siLeetcode} />
+                  LeetCode
                 </a>
                 <span>
                   <MapPin aria-hidden="true" size={18} />

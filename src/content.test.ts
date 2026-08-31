@@ -9,6 +9,7 @@ describe("portfolio content", () => {
       role: "Software Engineer",
       summary:
         "Building scalable systems and thoughtful product experiences with Java, Spring Boot, Vue, React, and TypeScript.",
+      leetcode: "https://leetcode.com/u/poojadonode31/",
     });
   });
 
