@@ -121,6 +121,7 @@ export const projects = [
     outcome:
       "Introduced Redis caching to reduce API response time from 150 ms to 10 ms.",
     technologies: ["Java", "Spring Boot", "Redis", "MySQL", "Design Patterns"],
+    url: "https://github.com/poojadonode28/ecommerce",
   },
 ] satisfies readonly Project[];
 

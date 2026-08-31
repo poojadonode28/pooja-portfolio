@@ -43,6 +43,10 @@ describe("portfolio page", () => {
     expect(
       screen.getByRole("heading", { name: "E-Commerce Platform" }),
     ).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "E-Commerce Platform" })).toHaveAttribute(
+      "href",
+      "https://github.com/poojadonode28/ecommerce",
+    );
     expect(screen.getByText(/5\+ years of experience/i)).toBeInTheDocument();
     expect(screen.getByText(/currently working at/i)).toBeInTheDocument();
   });
