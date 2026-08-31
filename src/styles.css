@@ -1224,7 +1224,7 @@ h2 {
 }
 
 .footer p {
-  margin: 0 0 0 auto;
+  margin: 0 auto;
   color: var(--muted);
   font-size: 0.82rem;
 }
@@ -1530,8 +1530,8 @@ h2 {
   }
 
   .footer p {
-    margin-left: 0;
     flex-basis: 100%;
+    text-align: center;
   }
 }
 

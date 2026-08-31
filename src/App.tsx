@@ -19,7 +19,7 @@ import {
   X,
 } from "lucide-react";
 import { siGithub } from "simple-icons";
-import BrandIcon from "./BrandIcon";
+import BrandIcon, { linkedinIcon } from "./BrandIcon";
 import { experience, profile, projects, skillGroups } from "./content";
 
 const navItems = [
@@ -141,7 +141,7 @@ const App = () => {
               </div>
               <div className="social-row" aria-label="Professional profiles">
                 <a href={profile.linkedin} target="_blank" rel="noreferrer">
-                  <ExternalLink aria-hidden="true" size={18} />
+                  <BrandIcon icon={linkedinIcon} />
                   LinkedIn
                 </a>
                 <a href={profile.github} target="_blank" rel="noreferrer">
@@ -444,12 +444,6 @@ const App = () => {
       </main>
 
       <footer className="footer section">
-        <a className="wordmark" href="#top">
-          <span className="wordmark-mark" aria-hidden="true">
-            PD
-          </span>
-          <span>Pooja Donode</span>
-        </a>
         <p>Designed and built with React · 2026</p>
       </footer>
     </div>
