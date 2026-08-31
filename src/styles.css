@@ -677,57 +677,65 @@ h2 {
 
 .booking-graphic {
   position: relative;
-  width: 72%;
-  height: 190px;
+  display: flex;
+  width: 236px;
+  flex-direction: column;
+  align-items: center;
 }
 
-.film-strip {
-  position: absolute;
-  inset: 12px 30px 34px 0;
-  display: grid;
-  padding: 22px;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  background: rgba(17, 29, 54, 0.76);
-  border: 2px solid rgba(255, 255, 255, 0.25);
-  border-radius: 18px;
-  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.2);
-  transform: rotate(-6deg);
-}
-
-.film-strip::before,
-.film-strip::after {
-  position: absolute;
-  right: 12px;
-  left: 12px;
-  height: 5px;
-  background: repeating-linear-gradient(
-    90deg,
-    white 0 8px,
-    transparent 8px 18px
+.screen-arc {
+  width: 92%;
+  height: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0)
   );
-  content: "";
-  opacity: 0.55;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
 }
 
-.film-strip::before {
-  top: 8px;
+.screen-label {
+  margin: 7px 0 22px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
 
-.film-strip::after {
-  bottom: 8px;
+.seat-map {
+  display: grid;
+  gap: 8px;
 }
 
-.film-strip span {
-  background: linear-gradient(145deg, #8db3ff, #f0f5ff);
-  border-radius: 8px;
-  opacity: 0.88;
+.seat-row {
+  display: grid;
+  grid-template-columns: repeat(8, 20px);
+  gap: 8px;
+}
+
+.seat {
+  height: 16px;
+  border-radius: 6px 6px 3px 3px;
+}
+
+.seat-open {
+  background: rgba(255, 255, 255, 0.26);
+}
+
+.seat-taken {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.seat-chosen {
+  background: #ffd59a;
+  box-shadow: 0 6px 16px rgba(255, 213, 154, 0.5);
 }
 
 .ticket {
   position: absolute;
-  right: 0;
-  bottom: 0;
+  right: -32px;
+  bottom: -34px;
   display: flex;
   width: 142px;
   height: 88px;
@@ -1484,8 +1492,7 @@ h2 {
   }
 
   .booking-graphic {
-    width: 82%;
-    transform: scale(0.9);
+    transform: scale(0.88);
   }
 
   .project-copy {

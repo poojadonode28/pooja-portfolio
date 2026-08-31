@@ -36,6 +36,13 @@ const impactMetrics = [
 
 const expertiseIcons = [ServerCog, CodeXml, Check, Database] as const;
 
+// Seat plan behind the PopcornTime card: "X" already booked, "S" the pair being
+// picked, "." still free.
+const seatRows = ["..XX....", ".XX..XX.", ".SS.....", "X......X"] as const;
+
+const seatStatus = (seat: string) =>
+  seat === "X" ? "taken" : seat === "S" ? "chosen" : "open";
+
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -299,10 +306,19 @@ const App = () => {
                 <div className="project-graphic" aria-hidden="true">
                   {index === 0 ? (
                     <div className="booking-graphic">
-                      <div className="film-strip">
-                        <span />
-                        <span />
-                        <span />
+                      <div className="screen-arc" />
+                      <p className="screen-label">Screen this way</p>
+                      <div className="seat-map">
+                        {seatRows.map((row, rowIndex) => (
+                          <div className="seat-row" key={row}>
+                            {[...row].map((seat, seatIndex) => (
+                              <span
+                                className={`seat seat-${seatStatus(seat)}`}
+                                key={`${rowIndex}-${seatIndex}`}
+                              />
+                            ))}
+                          </div>
+                        ))}
                       </div>
                       <div className="ticket">
                         <span>SEAT</span>
