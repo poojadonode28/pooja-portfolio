@@ -1094,14 +1094,8 @@ h2 {
   border-top: 1px solid rgba(255, 255, 255, 0.13);
 }
 
-.about-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(50px, 10vw, 140px);
-}
-
-.about-section .eyebrow {
-  color: #9db7ff;
+.about-copy {
+  max-width: 900px;
 }
 
 .about-copy > p {
@@ -1347,9 +1341,6 @@ h2 {
     grid-column: 2;
   }
 
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 600px) {

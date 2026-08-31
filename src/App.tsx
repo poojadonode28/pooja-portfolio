@@ -207,10 +207,9 @@ const App = () => {
         </section>
 
         <section className="about-section" id="about">
-          <div className="section about-grid">
-            <div>
-              <p className="eyebrow">About</p>
-              <h2>Engineering with ownership at every layer.</h2>
+          <div className="section">
+            <div className="section-heading section-heading-compact">
+              <h2>About</h2>
             </div>
             <div className="about-copy">
               <p>
