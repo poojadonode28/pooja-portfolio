@@ -13,6 +13,7 @@ import {
   MapPin,
   Menu,
   ServerCog,
+  ShoppingBag,
   Sparkles,
   X,
 } from "lucide-react";
@@ -42,6 +43,13 @@ const seatRows = ["..XX....", ".XX..XX.", ".SS.....", "X......X"] as const;
 
 const seatStatus = (seat: string) =>
   seat === "X" ? "taken" : seat === "S" ? "chosen" : "open";
+
+const shopProducts = [
+  { tone: "one", price: "₹799" },
+  { tone: "two", price: "₹1,299" },
+  { tone: "three", price: "₹499" },
+  { tone: "four", price: "₹2,199" },
+] as const;
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -327,13 +335,28 @@ const App = () => {
                     </div>
                   ) : (
                     <div className="commerce-graphic">
-                      <div className="speed-ring">
-                        <strong>15×</strong>
-                        <span>faster</span>
+                      <div className="storefront">
+                        <div className="shop-search">
+                          <span />
+                          <p>Search products</p>
+                        </div>
+                        <div className="product-shelf">
+                          {shopProducts.map((product) => (
+                            <div
+                              className={`product-tile product-tile-${product.tone}`}
+                              key={product.price}
+                            >
+                              <span />
+                              <strong>{product.price}</strong>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                      <div className="cache-node cache-node-one" />
-                      <div className="cache-node cache-node-two" />
-                      <div className="cache-node cache-node-three" />
+                      <div className="cart-chip">
+                        <ShoppingBag aria-hidden="true" size={16} />
+                        <strong>2</strong>
+                        <span>in cart</span>
+                      </div>
                     </div>
                   )}
                 </div>
