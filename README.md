@@ -21,9 +21,21 @@ npm run preview # preview the production build
 
 ## Deployment
 
-Every push to `main` runs the test suite and publishes `dist/` to GitHub Pages via
-`.github/workflows/deploy.yml`. The Vite `base` is set to `/pooja-portfolio/` to
-match the repository subpath, so asset and résumé links resolve correctly.
+`.github/workflows/deploy.yml` runs the tests and publishes `dist/` to GitHub Pages
+on every push to `main`. Before the first run, set **Settings → Pages → Build and
+deployment → Source** to **GitHub Actions**; the workflow cannot create the Pages
+site on its own.
+
+The Vite `base` defaults to `/pooja-portfolio/` so assets resolve under the
+repository subpath. To deploy on a host that serves from the domain root instead
+(Vercel, Netlify, a custom domain), build with `BASE_PATH=/`:
+
+```bash
+BASE_PATH=/ npm run build
+```
+
+The résumé link is derived from `import.meta.env.BASE_URL`, so it follows whichever
+base you build with.
 
 ## Content
 
