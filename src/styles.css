@@ -142,11 +142,10 @@ h2 {
   padding: 10px 12px 10px 18px;
   align-items: center;
   gap: 24px;
-  background: rgba(255, 255, 255, 0.88);
-  border: 1px solid rgba(219, 227, 239, 0.9);
+  background: var(--surface);
+  border: 1px solid var(--line);
   border-radius: 18px;
   box-shadow: var(--shadow-sm);
-  backdrop-filter: blur(18px);
 }
 
 .wordmark {
@@ -1334,7 +1333,7 @@ h2 {
     left: 0;
     padding: 10px;
     flex-direction: column;
-    background: rgba(255, 255, 255, 0.98);
+    background: var(--surface);
     border: 1px solid var(--line);
     border-radius: 16px;
     box-shadow: var(--shadow-lg);
