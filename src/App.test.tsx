@@ -36,6 +36,10 @@ describe("portfolio page", () => {
       "https://www.vidyuttech.com",
     );
     expect(screen.getByRole("heading", { name: "PopcornTime" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "PopcornTime" })).toHaveAttribute(
+      "href",
+      "https://github.com/poojadonode28/PopcornTime1",
+    );
     expect(
       screen.getByRole("heading", { name: "E-Commerce Platform" }),
     ).toBeInTheDocument();

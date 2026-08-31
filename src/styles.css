@@ -647,6 +647,10 @@ h2 {
   font-weight: 600;
 }
 
+.project-topline a {
+  color: inherit;
+}
+
 .project-graphic {
   display: grid;
   height: 300px;

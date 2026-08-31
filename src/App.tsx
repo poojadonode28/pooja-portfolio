@@ -312,7 +312,18 @@ const App = () => {
               <article className={`project-card project-${index + 1}`} key={project.title}>
                 <div className="project-topline">
                   <span>0{index + 1}</span>
-                  <ExternalLink aria-hidden="true" size={20} />
+                  {project.url ? (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`View ${project.title} on GitHub`}
+                    >
+                      <ExternalLink aria-hidden="true" size={20} />
+                    </a>
+                  ) : (
+                    <ExternalLink aria-hidden="true" size={20} />
+                  )}
                 </div>
                 <div className="project-graphic" aria-hidden="true">
                   {index === 0 ? (
@@ -365,7 +376,20 @@ const App = () => {
                 </div>
                 <div className="project-copy">
                   <p>{project.eyebrow}</p>
-                  <h3>{project.title}</h3>
+                  <h3>
+                    {project.url ? (
+                      <a
+                        className="company-link"
+                        href={project.url}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {project.title}
+                      </a>
+                    ) : (
+                      project.title
+                    )}
+                  </h3>
                   <p className="project-description">{project.description}</p>
                   <div className="outcome">
                     <ArrowRight aria-hidden="true" size={17} />

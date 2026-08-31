@@ -26,6 +26,7 @@ type Project = {
   readonly description: string;
   readonly outcome: string;
   readonly technologies: readonly string[];
+  readonly url?: string;
 };
 
 export const profile = {
@@ -110,6 +111,7 @@ export const projects = [
     outcome:
       "Designed 20+ tables and supporting class diagrams, reducing query times by 25%.",
     technologies: ["Java", "Spring Boot", "JPA", "MySQL", "Log4j"],
+    url: "https://github.com/poojadonode28/PopcornTime1",
   },
   {
     title: "E-Commerce Platform",
@@ -120,7 +122,7 @@ export const projects = [
       "Introduced Redis caching to reduce API response time from 150 ms to 10 ms.",
     technologies: ["Java", "Spring Boot", "Redis", "MySQL", "Design Patterns"],
   },
-] as const satisfies readonly Project[];
+] satisfies readonly Project[];
 
 export const skillGroups = [
   {

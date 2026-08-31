@@ -33,5 +33,6 @@ describe("portfolio content", () => {
       "PopcornTime",
       "E-Commerce Platform",
     ]);
+    expect(projects[0].url).toBe("https://github.com/poojadonode28/PopcornTime1");
   });
 });
