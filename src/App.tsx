@@ -89,7 +89,7 @@ const App = () => {
                 {item.label}
               </a>
             ))}
-            <a href={`mailto:${profile.email}`} onClick={closeMenu}>
+            <a href="#contact" onClick={closeMenu}>
               Contact
             </a>
           </div>
