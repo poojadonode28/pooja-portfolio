@@ -1054,6 +1054,17 @@ h2 {
   background: var(--navy);
 }
 
+/* About and the metric strip are both navy and now sit next to each other, so
+   they read as a single dark band: drop the seam padding and separate them
+   with a hairline instead. */
+.about-section:has(+ .metrics-section) {
+  padding-bottom: 76px;
+}
+
+.about-section + .metrics-section .metric-wrap {
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
@@ -1490,6 +1501,10 @@ h2 {
 
   .about-section {
     padding-block: 82px;
+  }
+
+  .about-section:has(+ .metrics-section) {
+    padding-bottom: 56px;
   }
 
   .contact-card {

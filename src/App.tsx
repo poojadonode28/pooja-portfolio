@@ -21,10 +21,10 @@ import BrandIcon from "./BrandIcon";
 import { experience, profile, projects, skillGroups } from "./content";
 
 const navItems = [
+  { label: "About", href: "#about" },
   { label: "Work", href: "#work" },
   { label: "Experience", href: "#experience" },
   { label: "Expertise", href: "#expertise" },
-  { label: "About", href: "#about" },
 ] as const;
 
 const impactMetrics = [
@@ -190,6 +190,35 @@ const App = () => {
           </div>
         </section>
 
+        <section className="about-section" id="about">
+          <div className="section about-grid">
+            <div>
+              <p className="eyebrow">About</p>
+              <h2>Engineering with ownership at every layer.</h2>
+            </div>
+            <div className="about-copy">
+              <p>
+                I&apos;m a software engineer who enjoys hard platform problems: event
+                workflows, API design, performance tuning, data models, and the product
+                interfaces that make complex systems usable.
+              </p>
+              <p>
+                My work spans enterprise software at JFrog, mobility products at
+                VidyutTech, automotive technology at Tekion, and large-scale data systems
+                at Cognizant.
+              </p>
+              <div className="education-card">
+                <BriefcaseBusiness aria-hidden="true" />
+                <div>
+                  <span>Education</span>
+                  <strong>B.E. in Information Technology</strong>
+                  <p>D.Y. Patil College of Engineering · 2017–2021</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="metrics-section" aria-labelledby="impact-heading">
           <div className="section metric-wrap">
             <div className="metric-intro">
@@ -342,35 +371,6 @@ const App = () => {
                 </article>
               );
             })}
-          </div>
-        </section>
-
-        <section className="about-section" id="about">
-          <div className="section about-grid">
-            <div>
-              <p className="eyebrow">About</p>
-              <h2>Engineering with ownership at every layer.</h2>
-            </div>
-            <div className="about-copy">
-              <p>
-                I&apos;m a software engineer who enjoys hard platform problems: event
-                workflows, API design, performance tuning, data models, and the product
-                interfaces that make complex systems usable.
-              </p>
-              <p>
-                My work spans enterprise software at JFrog, mobility products at
-                VidyutTech, automotive technology at Tekion, and large-scale data systems
-                at Cognizant.
-              </p>
-              <div className="education-card">
-                <BriefcaseBusiness aria-hidden="true" />
-                <div>
-                  <span>Education</span>
-                  <strong>B.E. in Information Technology</strong>
-                  <p>D.Y. Patil College of Engineering · 2017–2021</p>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
 
