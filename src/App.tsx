@@ -210,37 +210,20 @@ const App = () => {
             </div>
             <div className="about-copy">
               <p>
-                I&apos;m a{" "}
-                <strong>Software Engineer with 5+ years of experience</strong> building
-                scalable backend systems, APIs, and platform solutions. I&apos;m currently
-                working at <strong>JFrog</strong>, where I work on engineering problems
-                across backend services, event-driven workflows, and developer-focused
-                platforms.
+                I&apos;m a <strong>Software Engineer with 5+ years of experience</strong>,
+                currently working at <strong>JFrog</strong>, building scalable backend
+                systems and developer-focused platforms.
               </p>
               <p>
-                My core expertise includes{" "}
+                I specialize in{" "}
                 <strong>
-                  Java, Spring Boot, REST APIs, databases, distributed systems, and system
-                  design
+                  Java, Spring Boot, APIs, distributed systems, and system design
                 </strong>
-                . I enjoy solving challenging problems around{" "}
-                <strong>
-                  API design, event-driven architectures, performance optimization, data
-                  modeling, and system reliability
-                </strong>
-                .
+                , with a focus on performance, reliability, and clean architecture.
               </p>
               <p>
-                I&apos;m particularly interested in understanding how systems work at
-                scale and designing solutions that are{" "}
-                <strong>reliable, maintainable, and easy to use</strong>. I also enjoy
-                working at the intersection of engineering and product—turning complex
-                technical problems into simple experiences for developers and users.
-              </p>
-              <p>
-                When I&apos;m not building software, I&apos;m usually learning something
-                new, exploring better ways to design systems, or working on side projects
-                to sharpen my engineering skills.
+                I enjoy solving complex engineering problems and turning them into{" "}
+                <strong>simple, scalable, and intuitive product experiences</strong>.
               </p>
               <div className="education-card">
                 <BriefcaseBusiness aria-hidden="true" />
