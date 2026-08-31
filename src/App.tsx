@@ -1,14 +1,14 @@
-import { useState } from "react";
+import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import {
   ArrowDownRight,
   ArrowRight,
   Braces,
-  BriefcaseBusiness,
   Check,
   CodeXml,
   Database,
   Download,
   ExternalLink,
+  GraduationCap,
   Mail,
   MapPin,
   Menu,
@@ -54,8 +54,43 @@ const shopProducts = [
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const mobileNavigationRef = useRef<HTMLDivElement>(null);
 
   const closeMenu = () => setIsMenuOpen(false);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      mobileNavigationRef.current?.querySelector<HTMLAnchorElement>("a")?.focus();
+    }
+  }, [isMenuOpen]);
+
+  const handleMobileNavigationKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeMenu();
+      menuButtonRef.current?.focus();
+      return;
+    }
+
+    if (event.key !== "Tab") {
+      return;
+    }
+
+    const links = Array.from(
+      mobileNavigationRef.current?.querySelectorAll<HTMLAnchorElement>("a[href]") ?? [],
+    );
+    const firstLink = links[0];
+    const lastLink = links.at(-1);
+
+    if (event.shiftKey && document.activeElement === firstLink) {
+      event.preventDefault();
+      lastLink?.focus();
+    } else if (!event.shiftKey && document.activeElement === lastLink) {
+      event.preventDefault();
+      firstLink?.focus();
+    }
+  };
 
   return (
     <div className="site-shell">
@@ -86,6 +121,7 @@ const App = () => {
           </a>
 
           <button
+            ref={menuButtonRef}
             className="menu-button"
             type="button"
             aria-label={isMenuOpen ? "Close navigation" : "Open navigation"}
@@ -97,8 +133,12 @@ const App = () => {
           </button>
 
           <div
+            ref={mobileNavigationRef}
             className={`mobile-nav ${isMenuOpen ? "mobile-nav-open" : ""}`}
             id="mobile-navigation"
+            aria-label="Mobile navigation"
+            hidden={!isMenuOpen}
+            onKeyDown={handleMobileNavigationKeyDown}
           >
             {navItems.map((item) => (
               <a key={item.href} href={item.href} onClick={closeMenu}>
@@ -230,7 +270,7 @@ const App = () => {
                 <strong>simple, scalable, and intuitive product experiences</strong>.
               </p>
               <div className="education-card">
-                <BriefcaseBusiness aria-hidden="true" />
+                <GraduationCap aria-hidden="true" />
                 <div>
                   <span>Education</span>
                   <strong>B.E. in Information Technology</strong>
@@ -472,10 +512,6 @@ const App = () => {
           </div>
         </section>
       </main>
-
-      <footer className="footer section">
-        <p>Designed and built with React · 2026</p>
-      </footer>
     </div>
   );
 };

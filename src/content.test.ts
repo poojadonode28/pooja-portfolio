@@ -29,6 +29,13 @@ describe("portfolio content", () => {
     ]);
   });
 
+  it("presents the API total as career impact rather than a Tekion-only claim", () => {
+    const tekion = experience.find((role) => role.company === "Tekion");
+
+    expect(tekion?.highlights.join(" ")).not.toMatch(/9\+ production/i);
+    expect(tekion?.highlights.join(" ")).toMatch(/production REST APIs/i);
+  });
+
   it("includes both portfolio-ready resume projects", () => {
     expect(projects.map((project) => project.title)).toEqual([
       "PopcornTime",

@@ -83,7 +83,7 @@ export const experience = [
     summary:
       "Contributed backend services for the Service Menu platform with a focus on scalable, low-latency APIs.",
     highlights: [
-      "Delivered 9+ production REST APIs and helped reduce platform latency by 20%.",
+      "Delivered production REST APIs and helped reduce platform latency by 20%.",
       "Implemented robust backend solutions supporting service-menu workflows and reliable data access.",
     ],
     technologies: ["Java", "Spring Boot", "REST APIs", "MongoDB"],

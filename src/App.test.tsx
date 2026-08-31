@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import App from "./App";
 
@@ -66,5 +66,46 @@ describe("portfolio page", () => {
     expect(
       screen.getByRole("button", { name: /close navigation/i }),
     ).toHaveAttribute("aria-expanded", "true");
+  });
+
+  it("moves focus into the mobile navigation when it opens", () => {
+    render(<App />);
+
+    fireEvent.click(screen.getByRole("button", { name: /open navigation/i }));
+
+    const mobileNavigation = document.querySelector("#mobile-navigation");
+    expect(mobileNavigation).not.toBeNull();
+    expect(
+      within(mobileNavigation as HTMLElement).getByRole("link", { name: "About" }),
+    ).toHaveFocus();
+  });
+
+  it("closes the mobile navigation with Escape and restores focus", () => {
+    render(<App />);
+
+    const menuButton = screen.getByRole("button", { name: /open navigation/i });
+    fireEvent.click(menuButton);
+    fireEvent.keyDown(document.querySelector("#mobile-navigation") as HTMLElement, {
+      key: "Escape",
+    });
+
+    expect(menuButton).toHaveFocus();
+    expect(menuButton).toHaveAttribute("aria-expanded", "false");
+  });
+
+  it("keeps Tab focus within the open mobile navigation", () => {
+    render(<App />);
+
+    fireEvent.click(screen.getByRole("button", { name: /open navigation/i }));
+    const mobileNavigation = document.querySelector("#mobile-navigation") as HTMLElement;
+    const links = within(mobileNavigation).getAllByRole("link");
+
+    links.at(-1)?.focus();
+    fireEvent.keyDown(mobileNavigation, { key: "Tab" });
+    expect(links[0]).toHaveFocus();
+
+    links[0].focus();
+    fireEvent.keyDown(mobileNavigation, { key: "Tab", shiftKey: true });
+    expect(links.at(-1)).toHaveFocus();
   });
 });
