@@ -613,15 +613,11 @@ h2 {
   line-height: 1.72;
 }
 
-/* Experience carries only its label, so it drops the two-column grid and the
-   space a full heading block would reserve. */
+/* Experience carries a bare title, so it drops the two-column grid that the
+   other sections need for their supporting paragraph. */
 .section-heading-compact {
   display: block;
-  margin-bottom: 34px;
-}
-
-.section-heading-compact .eyebrow {
-  margin-bottom: 0;
+  margin-bottom: 46px;
 }
 
 .project-grid {

@@ -241,7 +241,7 @@ const App = () => {
         <section className="experience-section" id="experience">
           <div className="section">
             <div className="section-heading section-heading-compact">
-              <h2 className="eyebrow">Experience</h2>
+              <h2>Experience</h2>
             </div>
 
             <div className="timeline">
