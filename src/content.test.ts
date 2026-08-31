@@ -7,6 +7,8 @@ describe("portfolio content", () => {
       name: "Pooja Donode",
       email: "poojadonode36921@gmail.com",
       role: "Software Engineer",
+      summary:
+        "Building scalable systems and thoughtful product experiences with Java, Spring Boot, Vue, React, and TypeScript.",
     });
   });
 

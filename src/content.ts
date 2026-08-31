@@ -35,7 +35,7 @@ export const profile = {
   role: "Software Engineer",
   location: "Bengaluru, India",
   summary:
-    "I build reliable backend systems and intuitive product experiences across Java, Spring Boot, Vue, React, and TypeScript.",
+    "Building scalable systems and thoughtful product experiences with Java, Spring Boot, Vue, React, and TypeScript.",
   linkedin: "https://www.linkedin.com/in/pooja-donode-948b49244",
   github: "https://github.com/poojadonode28",
 } satisfies Profile;

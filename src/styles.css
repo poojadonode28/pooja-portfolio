@@ -312,7 +312,7 @@ h2 {
 
 .hero h1 {
   max-width: 760px;
-  margin-bottom: 28px;
+  margin-bottom: 16px;
   color: var(--ink);
   font-size: clamp(2.5rem, 4.3vw, 3.9rem);
   line-height: 0.98;
