@@ -12,6 +12,7 @@ import {
   Mail,
   MapPin,
   Menu,
+  Phone,
   ServerCog,
   ShoppingBag,
   Sparkles,
@@ -419,6 +420,14 @@ const App = () => {
               >
                 <Mail aria-hidden="true" size={19} />
                 {profile.email}
+              </a>
+              <a
+                className="button button-light"
+                href={`tel:${profile.phone.replace(/\s/g, "")}`}
+                aria-label="Call Pooja"
+              >
+                <Phone aria-hidden="true" size={19} />
+                {profile.phone}
               </a>
               <a
                 className="text-link-light"

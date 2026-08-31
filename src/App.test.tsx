@@ -18,6 +18,10 @@ describe("portfolio page", () => {
       "href",
       "mailto:poojadonode36921@gmail.com",
     );
+    expect(screen.getByRole("link", { name: /call pooja/i })).toHaveAttribute(
+      "href",
+      "tel:+919689955894",
+    );
   });
 
   it("exposes the core work history and project case studies", () => {
