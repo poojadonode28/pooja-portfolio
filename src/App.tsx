@@ -332,15 +332,8 @@ const App = () => {
         </section>
 
         <section className="section expertise-section" id="expertise">
-          <div className="section-heading">
-            <div>
-              <p className="eyebrow">Expertise</p>
-              <h2>Full-cycle engineering, without the handoffs.</h2>
-            </div>
-            <p>
-              Comfortable moving from schemas and services to interfaces, tests, delivery,
-              and production insight.
-            </p>
+          <div className="section-heading section-heading-compact">
+            <h2>Expertise</h2>
           </div>
           <div className="expertise-grid">
             {skillGroups.map((group, index) => {
