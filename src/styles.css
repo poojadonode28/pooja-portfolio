@@ -1224,34 +1224,9 @@ h2 {
 }
 
 .footer p {
-  margin: 0 auto;
+  margin: 0 0 0 auto;
   color: var(--muted);
   font-size: 0.82rem;
-}
-
-.footer > div {
-  display: flex;
-  gap: 8px;
-}
-
-.footer > div a {
-  display: grid;
-  width: 44px;
-  height: 44px;
-  place-items: center;
-  color: var(--muted);
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-}
-
-.footer > div a:hover {
-  color: var(--primary);
-  border-color: #b8c8df;
-}
-
-.footer > div svg {
-  width: 18px;
 }
 
 @keyframes rise-in {
@@ -1555,12 +1530,8 @@ h2 {
   }
 
   .footer p {
-    order: 3;
+    margin-left: 0;
     flex-basis: 100%;
-  }
-
-  .footer > div {
-    margin-left: auto;
   }
 }
 

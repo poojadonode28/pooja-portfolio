@@ -451,14 +451,6 @@ const App = () => {
           <span>Pooja Donode</span>
         </a>
         <p>Designed and built with React · 2026</p>
-        <div>
-          <a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub">
-            <BrandIcon icon={siGithub} />
-          </a>
-          <a href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
-            <ExternalLink aria-hidden="true" />
-          </a>
-        </div>
       </footer>
     </div>
   );
