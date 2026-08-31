@@ -22,8 +22,8 @@ import { experience, profile, projects, skillGroups } from "./content";
 
 const navItems = [
   { label: "About", href: "#about" },
-  { label: "Work", href: "#work" },
   { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
   { label: "Expertise", href: "#expertise" },
 ] as const;
 
@@ -110,7 +110,7 @@ const App = () => {
               </h1>
               <p className="hero-summary">{profile.summary}</p>
               <div className="hero-actions">
-                <a className="button" href="#work">
+                <a className="button" href="#experience">
                   Explore my work
                   <ArrowRight aria-hidden="true" size={18} />
                 </a>
@@ -238,15 +238,59 @@ const App = () => {
           </div>
         </section>
 
-        <section className="section work-section" id="work">
+        <section className="experience-section" id="experience">
+          <div className="section">
+            <div className="section-heading">
+              <div>
+                <p className="eyebrow">Experience</p>
+                <h2>From data foundations to enterprise platforms.</h2>
+              </div>
+              <p>
+                Four roles, one consistent thread: finding the bottleneck and making the
+                system better.
+              </p>
+            </div>
+
+            <div className="timeline">
+              {experience.map((role, index) => (
+                <article className="timeline-item" key={`${role.company}-${role.period}`}>
+                  <div className="timeline-marker">
+                    <span>{String(index + 1).padStart(2, "0")}</span>
+                  </div>
+                  <div className="timeline-meta">
+                    <p>{role.period}</p>
+                    <span>{role.location}</span>
+                  </div>
+                  <div className="timeline-content">
+                    <p className="role-label">{role.role}</p>
+                    <h3>{role.company}</h3>
+                    <p className="role-summary">{role.summary}</p>
+                    <ul className="highlight-list">
+                      {role.highlights.map((highlight) => (
+                        <li key={highlight}>{highlight}</li>
+                      ))}
+                    </ul>
+                    <ul className="tag-list" aria-label={`${role.company} technologies`}>
+                      {role.technologies.map((technology) => (
+                        <li key={technology}>{technology}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section projects-section" id="projects">
           <div className="section-heading">
             <div>
-              <p className="eyebrow">Selected work</p>
+              <p className="eyebrow">Personal projects</p>
               <h2>Systems designed for real-world load.</h2>
             </div>
             <p>
-              Backend depth, thoughtful architecture, and performance gains that users can
-              feel.
+              Side builds where I get to own the architecture end to end, from data model
+              to performance budget.
             </p>
           </div>
 
@@ -298,50 +342,6 @@ const App = () => {
                 </div>
               </article>
             ))}
-          </div>
-        </section>
-
-        <section className="experience-section" id="experience">
-          <div className="section">
-            <div className="section-heading">
-              <div>
-                <p className="eyebrow">Experience</p>
-                <h2>From data foundations to enterprise platforms.</h2>
-              </div>
-              <p>
-                Four roles, one consistent thread: finding the bottleneck and making the
-                system better.
-              </p>
-            </div>
-
-            <div className="timeline">
-              {experience.map((role, index) => (
-                <article className="timeline-item" key={`${role.company}-${role.period}`}>
-                  <div className="timeline-marker">
-                    <span>{String(index + 1).padStart(2, "0")}</span>
-                  </div>
-                  <div className="timeline-meta">
-                    <p>{role.period}</p>
-                    <span>{role.location}</span>
-                  </div>
-                  <div className="timeline-content">
-                    <p className="role-label">{role.role}</p>
-                    <h3>{role.company}</h3>
-                    <p className="role-summary">{role.summary}</p>
-                    <ul className="highlight-list">
-                      {role.highlights.map((highlight) => (
-                        <li key={highlight}>{highlight}</li>
-                      ))}
-                    </ul>
-                    <ul className="tag-list" aria-label={`${role.company} technologies`}>
-                      {role.technologies.map((technology) => (
-                        <li key={technology}>{technology}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </article>
-              ))}
-            </div>
           </div>
         </section>
 
