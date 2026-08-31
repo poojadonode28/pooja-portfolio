@@ -80,7 +80,7 @@ const App = () => {
             ))}
           </div>
 
-          <a className="button button-small nav-cta" href={`mailto:${profile.email}`}>
+          <a className="button button-small nav-cta" href="#contact">
             Let&apos;s talk
             <ArrowDownRight aria-hidden="true" size={17} />
           </a>
