@@ -28,7 +28,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 24px;
+  scroll-padding-top: 8px;
 }
 
 body {
@@ -269,10 +269,17 @@ h2 {
   display: none;
 }
 
+/* Fill the first screen so the next section never peeks above the fold. */
 .hero {
-  min-height: 640px;
+  display: flex;
+  min-height: calc(100svh - 120px);
+  align-items: center;
   padding-top: 72px;
   padding-bottom: 100px;
+}
+
+.hero-grid {
+  width: 100%;
 }
 
 .hero-grid {
