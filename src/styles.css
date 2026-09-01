@@ -26,9 +26,10 @@
   box-sizing: border-box;
 }
 
+/* Clears the sticky header so anchored sections are not hidden behind it. */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 8px;
+  scroll-padding-top: 108px;
 }
 
 body {
@@ -95,8 +96,10 @@ h2 {
   text-wrap: balance;
 }
 
+/* clip, not hidden: hidden would make this a scroll container and break the
+   sticky header, while still needing to contain the hero's offset visuals. */
 .site-shell {
-  overflow: hidden;
+  overflow-x: clip;
 }
 
 .section {
@@ -125,11 +128,17 @@ h2 {
   outline-offset: 4px;
 }
 
+/* Sticky so the section links stay reachable from anywhere on the page. The
+   translucent fill lets the tinted page background show through instead of
+   cutting a hard band across it. */
 .site-header {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 50;
   padding-block: 26px 8px;
   padding-inline: 20px;
+  background: rgba(247, 249, 252, 0.82);
+  backdrop-filter: blur(12px);
 }
 
 .nav-wrap {
@@ -1350,6 +1359,10 @@ h2 {
   .site-header {
     padding-block: 16px 4px;
     padding-inline: 12px;
+  }
+
+  html {
+    scroll-padding-top: 86px;
   }
 
   .nav-wrap {
