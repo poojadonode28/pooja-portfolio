@@ -63,7 +63,7 @@ describe("portfolio page", () => {
 
     expect(document.body.innerHTML).not.toContain("96899");
     expect(document.body.innerHTML).not.toContain("55894");
-    expect(screen.getByText("+91 96••• •••••")).toBeInTheDocument();
+    expect(screen.getByText("+91 96xxx xxxxx")).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole("button", { name: /show phone number/i }));
 

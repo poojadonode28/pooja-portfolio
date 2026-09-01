@@ -52,7 +52,7 @@ const shopProducts = [
   { tone: "four", price: "₹2,199" },
 ] as const;
 
-const maskedPhone = "+91 96••• •••••";
+const maskedPhone = "+91 96xxx xxxxx";
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
