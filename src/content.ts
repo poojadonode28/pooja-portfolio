@@ -33,7 +33,9 @@ type Project = {
 export const profile = {
   name: "Pooja Donode",
   email: "poojadonode36921@gmail.com",
-  phone: "+91 96899 55894",
+  // Base64 keeps the digits out of the shipped HTML so scrapers reading the
+  // static page do not harvest them; the UI decodes it only when asked.
+  phone: atob("KzkxIDk2ODk5IDU1ODk0"),
   role: "Software Engineer",
   location: "Bengaluru, India",
   summary:

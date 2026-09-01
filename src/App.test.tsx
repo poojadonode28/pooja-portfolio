@@ -18,14 +18,13 @@ describe("portfolio page", () => {
       "href",
       "mailto:poojadonode36921@gmail.com",
     );
-    expect(screen.getByRole("link", { name: /call pooja/i })).toHaveAttribute(
-      "href",
-      "tel:+919689955894",
-    );
+    expect(
+      screen.queryByRole("link", { name: /call pooja/i }),
+    ).not.toBeInTheDocument();
     const telLinks = screen
       .getAllByRole("link")
       .filter((link) => link.getAttribute("href")?.startsWith("tel:"));
-    expect(telLinks).toHaveLength(1);
+    expect(telLinks).toHaveLength(0);
     expect(screen.getByRole("link", { name: "LeetCode" })).toHaveAttribute(
       "href",
       "https://leetcode.com/u/poojadonode31/",
@@ -59,8 +58,23 @@ describe("portfolio page", () => {
     expect(screen.getByText(/currently working at/i)).toBeInTheDocument();
   });
 
-  it("toggles the mobile navigation with an announced state", () => {
+  it("hides the phone digits until the visitor asks for them", () => {
     render(<App />);
+
+    expect(document.body.innerHTML).not.toContain("96899");
+    expect(document.body.innerHTML).not.toContain("55894");
+    expect(screen.getByText("+91 96••• •••••")).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole("button", { name: /show phone number/i }));
+
+    expect(screen.getByRole("link", { name: /call pooja/i })).toHaveAttribute(
+      "href",
+      "tel:+919689955894",
+    );
+    expect(screen.getByText("+91 96899 55894")).toBeInTheDocument();
+  });
+
+  it("toggles the mobile navigation with an announced state", () => {    render(<App />);
 
     const menuButton = screen.getByRole("button", { name: /open navigation/i });
     expect(menuButton).toHaveAttribute("aria-expanded", "false");

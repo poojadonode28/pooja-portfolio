@@ -52,8 +52,11 @@ const shopProducts = [
   { tone: "four", price: "₹2,199" },
 ] as const;
 
+const maskedPhone = "+91 96••• •••••";
+
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isPhoneVisible, setIsPhoneVisible] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const mobileNavigationRef = useRef<HTMLDivElement>(null);
 
@@ -491,14 +494,26 @@ const App = () => {
                 <Mail aria-hidden="true" size={19} />
                 {profile.email}
               </a>
-              <a
-                className="button button-light"
-                href={`tel:${profile.phone.replace(/\s/g, "")}`}
-                aria-label="Call Pooja"
-              >
-                <Phone aria-hidden="true" size={19} />
-                {profile.phone}
-              </a>
+              {isPhoneVisible ? (
+                <a
+                  className="button button-light"
+                  href={`tel:${profile.phone.replace(/\s/g, "")}`}
+                  aria-label="Call Pooja"
+                >
+                  <Phone aria-hidden="true" size={19} />
+                  {profile.phone}
+                </a>
+              ) : (
+                <button
+                  className="button button-light"
+                  type="button"
+                  onClick={() => setIsPhoneVisible(true)}
+                  aria-label="Show phone number"
+                >
+                  <Phone aria-hidden="true" size={19} />
+                  {maskedPhone}
+                </button>
+              )}
               <a
                 className="text-link-light"
                 href={profile.linkedin}
