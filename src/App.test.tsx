@@ -22,6 +22,10 @@ describe("portfolio page", () => {
       "href",
       "tel:+919689955894",
     );
+    expect(screen.getByRole("link", { name: "+91 96899 55894" })).toHaveAttribute(
+      "href",
+      "tel:+919689955894",
+    );
     expect(screen.getByRole("link", { name: "LeetCode" })).toHaveAttribute(
       "href",
       "https://leetcode.com/u/poojadonode31/",
