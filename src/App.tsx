@@ -189,10 +189,6 @@ const App = () => {
                   <BrandIcon icon={siLeetcode} />
                   LeetCode
                 </a>
-                <a href={`tel:${profile.phone.replace(/\s/g, "")}`}>
-                  <Phone aria-hidden="true" size={18} />
-                  {profile.phone}
-                </a>
                 <span>
                   <MapPin aria-hidden="true" size={18} />
                   {profile.location}
