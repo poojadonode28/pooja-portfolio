@@ -52,7 +52,7 @@ const shopProducts = [
   { tone: "four", price: "₹2,199" },
 ] as const;
 
-const maskedPhone = "+91 96xxx xxxxx";
+const maskedPhone = `${profile.phone.slice(0, 6)}xxx xxxxx`;
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -172,11 +172,12 @@ const App = () => {
                 </a>
                 <a
                   className="button button-secondary"
-                  href={`${import.meta.env.BASE_URL}pooja-donode-resume.pdf`}
-                  download
+                  href={profile.resume}
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   <Download aria-hidden="true" size={18} />
-                  Download résumé
+                  Download Resume
                 </a>
               </div>
               <div className="social-row" aria-label="Professional profiles">

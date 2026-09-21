@@ -10,13 +10,13 @@ describe("portfolio page", () => {
       screen.getByRole("heading", { level: 1, name: /pooja donode/i }),
     ).toBeInTheDocument();
     expect(screen.getByRole("navigation")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /download résumé/i })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: /download resume/i })).toHaveAttribute(
       "href",
-      "/pooja-donode-resume.pdf",
+      "https://drive.google.com/file/d/1NWTmzU_YpEN5eh1ExLhHIjng6Y-1ygyX/view?usp=sharing",
     );
     expect(screen.getByRole("link", { name: /email pooja/i })).toHaveAttribute(
       "href",
-      "mailto:poojadonode36921@gmail.com",
+      "mailto:poojadonode.sde@gmail.com",
     );
     expect(
       screen.queryByRole("link", { name: /call pooja/i }),
@@ -61,17 +61,17 @@ describe("portfolio page", () => {
   it("hides the phone digits until the visitor asks for them", () => {
     render(<App />);
 
-    expect(document.body.innerHTML).not.toContain("96899");
-    expect(document.body.innerHTML).not.toContain("55894");
-    expect(screen.getByText("+91 96xxx xxxxx")).toBeInTheDocument();
+    expect(document.body.innerHTML).not.toContain("95459");
+    expect(document.body.innerHTML).not.toContain("14295");
+    expect(screen.getByText("+91 95xxx xxxxx")).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole("button", { name: /show phone number/i }));
 
     expect(screen.getByRole("link", { name: /call pooja/i })).toHaveAttribute(
       "href",
-      "tel:+919689955894",
+      "tel:+919545914295",
     );
-    expect(screen.getByText("+91 96899 55894")).toBeInTheDocument();
+    expect(screen.getByText("+91 95459 14295")).toBeInTheDocument();
   });
 
   it("toggles the mobile navigation with an announced state", () => {    render(<App />);

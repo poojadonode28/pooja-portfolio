@@ -5,7 +5,9 @@ describe("portfolio content", () => {
   it("identifies Pooja and provides a direct contact route", () => {
     expect(profile).toMatchObject({
       name: "Pooja Donode",
-      email: "poojadonode36921@gmail.com",
+      email: "poojadonode.sde@gmail.com",
+      resume:
+        "https://drive.google.com/file/d/1NWTmzU_YpEN5eh1ExLhHIjng6Y-1ygyX/view?usp=sharing",
       role: "Software Engineer",
       summary:
         "Building scalable systems and thoughtful product experiences with Java, Spring Boot, Vue, React, and TypeScript.",
