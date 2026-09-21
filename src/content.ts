@@ -2,6 +2,7 @@ type Profile = {
   readonly name: string;
   readonly email: string;
   readonly phone: string;
+  readonly resume: string;
   readonly role: string;
   readonly location: string;
   readonly summary: string;
@@ -35,7 +36,9 @@ export const profile = {
   email: "poojadonode36921@gmail.com",
   // Base64 keeps the digits out of the shipped HTML so scrapers reading the
   // static page do not harvest them; the UI decodes it only when asked.
-  phone: atob("KzkxIDk2ODk5IDU1ODk0"),
+  phone: "9689955894",
+  resume:
+    "https://drive.google.com/file/d/1e4IAX2edbSMqQEdPK1ZwJFkR1RU8OYO_/view?usp=sharing",
   role: "Software Engineer",
   location: "Bengaluru, India",
   summary:

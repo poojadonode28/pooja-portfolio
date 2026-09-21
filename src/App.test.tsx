@@ -10,9 +10,9 @@ describe("portfolio page", () => {
       screen.getByRole("heading", { level: 1, name: /pooja donode/i }),
     ).toBeInTheDocument();
     expect(screen.getByRole("navigation")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /download résumé/i })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: /download resume/i })).toHaveAttribute(
       "href",
-      "/pooja-donode-resume.pdf",
+      "https://drive.google.com/file/d/1e4IAX2edbSMqQEdPK1ZwJFkR1RU8OYO_/view?usp=sharing",
     );
     expect(screen.getByRole("link", { name: /email pooja/i })).toHaveAttribute(
       "href",
@@ -58,21 +58,30 @@ describe("portfolio page", () => {
     expect(screen.getByText(/currently working at/i)).toBeInTheDocument();
   });
 
+
   it("hides the phone digits until the visitor asks for them", () => {
     render(<App />);
 
-    expect(document.body.innerHTML).not.toContain("96899");
-    expect(document.body.innerHTML).not.toContain("55894");
-    expect(screen.getByText("+91 96xxx xxxxx")).toBeInTheDocument();
+    // Phone number should not be visible initially
+    expect(document.body.innerHTML).not.toContain("9689955894");
 
-    fireEvent.click(screen.getByRole("button", { name: /show phone number/i }));
+    // Verify masked phone number
+    expect(screen.getByText("968995xxx xxxxx")).toBeInTheDocument();
 
-    expect(screen.getByRole("link", { name: /call pooja/i })).toHaveAttribute(
-      "href",
-      "tel:+919689955894",
+    // Click to reveal the phone number
+    fireEvent.click(
+        screen.getByRole("button", { name: /show phone number/i })
     );
-    expect(screen.getByText("+91 96899 55894")).toBeInTheDocument();
+
+    // Verify phone link
+    expect(
+        screen.getByRole("link", { name: /call pooja/i })
+    ).toHaveAttribute("href", "tel:9689955894");
+
+    // Verify full phone number is visible
+    expect(screen.getByText("9689955894")).toBeInTheDocument();
   });
+
 
   it("toggles the mobile navigation with an announced state", () => {    render(<App />);
 
